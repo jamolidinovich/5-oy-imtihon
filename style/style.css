@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* loader  */
+#loader {
+  margin-left: 600px;
+  margin-top: 170px;
+}
+.svg-frame {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-frame svg {
+  position: absolute;
+  transition: 0.5s;
+  z-index: calc(1 - (0.2 * var(--j)));
+  transform-origin: center;
+  width: 344px;
+  height: 344px;
+  fill: none;
+}
+
+.svg-frame:hover svg {
+  transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i)))
+    translateY(calc(-35px * var(--i)));
+}
+
+.svg-frame svg #center {
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.svg-frame:hover svg #center {
+  transform: rotate(-30deg) translateX(45px) translateY(-3px);
+}
+
+#out2 {
+  animation: rotate16 7s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+#out3 {
+  animation: rotate16 3s ease-in-out infinite alternate;
+  transform-origin: center;
+  stroke: #ff0;
+}
+
+#inner3,
+#inner1 {
+  animation: rotate16 4s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+#center1 {
+  fill: #ff0;
+  animation: rotate16 2s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes rotate16 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* light mode style  */
+
+:root {
+  --primary-text-color: #111517;
+  --primary-white: #ffffff;
+  --primary-black: #000000;
+  --site-bg-color: #fafafa;
+  --item-bg: #ffffff;
+  --main-font-family: "Nunito Sans", sans-serif;
+  --about-bg: #ffffff;
+  --hover-color: rgb(0 0 0 / 0.4);
+}
+
+.whetMod {
+  --primary-text-color: #111517;
+  --primary-white: #ffffff;
+  --primary-black: #000000;
+  --site-bg-color: #fafafa;
+  --item-bg: #ffffff;
+  --main-font-family: "Nunito Sans", sans-serif;
+  --about-bg: #ffffff;
+  --hover-color: rgb(0 0 0 / 0.4);
+}
+
+/* dark mode style  */
+
+.dark-mode {
+  --primary-text-color: #ffffff;
+  --primary-white: #2b3844;
+  --search-color: #ffffff;
+  --primary-black: #ffffff;
+  --site-bg-color: #202c36;
+  --item-bg: #2b3844;
+  --about-bg: #202c36;
+  --hover-color: rgb(255 255 255 / 0.4);
+}
+
+/* body  style  */
+body {
+  background: var(--site-bg-color);
+}
+
+/* Umumiy style  */
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* header qisimga style  */
+
+header {
+  max-width: 1500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 81px;
+  color: var(--primary-black);
+  background: var(--primary-white);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+}
+
+/* qittalarga ajratuvchi buttonga styles  */
+button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+}
+button span a {
+  color: #fff;
+  text-decoration: none;
+}
+button a:hover {
+  color: #fff;
+}
+button svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+button:hover span {
+  transform: translateX(7px);
+}
+
+/* header ichidagi textga style  */
+
+header h2,
+p {
+  color: var(--primary-black);
+}
+
+.mooude {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* hero qisimga style  */
+
+.hero {
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 48px 0px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  width: 450px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: var(--primary-white);
+  box-shadow: 20px 12px 9px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-right: 5px;
+}
+
+.search input {
+  background-color: var(--primary-white);
+  border: none;
+  outline: none;
+  height: 20px;
+  font-size: 18px;
+  color: var(--primary-text-color);
+  font-family: var(--main-font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.select {
+  outline: none;
+  padding: 0px 10px;
+  border: none;
+  width: 200px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s;
+}
+.select:hover {
+  cursor: pointer;
+  transform: scaleX(1.1);
+}
+
+/* Apidan kelgan cardga style */
+
+#creatMain {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}
+.colum img {
+  width: 275px;
+  height: 160px;
+  flex-shrink: 0;
+}
+.colum {
+  width: 275px;
+  height: 356px;
+  color: var(--primary-black);
+  background: var(--primary-white);
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.colum:hover {
+  transform: scale(1.1);
+}
+.colum .tex {
+  padding: 20px;
+}
+.colum .tex p {
+  margin-bottom: 15px;
+}
+
+/* Davlatlarni uzini malumotlariga stayle  */
+
+.moreInfo {
+  display: none;
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.img button {
+  transition: all 0.5s;
+  padding: 5px 20px;
+  width: 100px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: var(--primary-white);
+  border: none;
+  font-size: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.img button:hover {
+  transform: scaleX(1.1);
+}
+.img img {
+  border-radius: 10px;
+  width: 560px;
+  height: 440px;
+}
+
+.cardText {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+.leftTex p {
+  width: 200px;
+  margin-bottom: 20px;
+}
+.rightTex p {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.regionAll {
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}
+.btn {
+  color: white;
+  transition: all 0.5s;
+}
+.btn:hover {
+  transform: scaleX(1.1);
+}
+
+/*responsiv uchun staylelar  */
+@media (max-width: 1130px) {
+  .container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .moreInfo {
+    width: 600px;
+    gap: 50px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .moreInfo img {
+    width: 500px;
+    height: 350px;
+  }
+}
+@media (max-width: 700px) {
+  .container {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+  .hero .btn {
+    text-align: center;
+  }
+  .moreInfo {
+    width: 400px;
+    gap: 50px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .moreInfo img {
+    width: 400px;
+    height: 300px;
+  }
+}
