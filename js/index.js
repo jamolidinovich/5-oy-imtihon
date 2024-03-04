@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function () {
            </div>
       `;
       });
-      // Davlatlar qaysi qitaga doirligi
+      // region buyicha
       regin.forEach((el) => {
         el.addEventListener("click", function () {
           all.forEach((elem) => {
@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", function () {
             }
           });
         });
-
+        // ss
         el.addEventListener("click", function () {
           regionAll.innerHTML = "";
           all.forEach((elem) => {
@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function () {
             }
           });
         });
-        // qitallar tanlanganda ruy beradigan hodisalar
+
         el.addEventListener("click", function () {
           if (el.textContent == "All") {
             regionAll.style.display = "none";
@@ -88,15 +88,16 @@ window.addEventListener("DOMContentLoaded", function () {
             creatMain.style.display = "flex";
           }
         });
+
         regionAll.addEventListener("click", function () {
           all.forEach((element) => {
             if (regionAll.id == element.name.slug) {
               creatMain.style.display = "none";
               hero.style.display = "none";
               moreInfo.innerHTML = `
-                      <div class="img id="btnRef">    
-                      <button id="btnRef">Back</button>;          
-                                          <img src="${element.flags.png}" alt="${element.flags.alt}" />
+                      <div class="img id="btnRef">
+                      <button id="btnRef">Back</button>;
+                      <img src="${element.flags.png}" alt="${element.flags.alt}" />
                     </div>
                     <div class="cardText">
                       <div class="leftTex">
@@ -109,35 +110,19 @@ window.addEventListener("DOMContentLoaded", function () {
                       <div class="rightTex">
                         <p>Top level Domain:.be lorem...</p>
                         <p>Currencies :${element.currencies}</p>
-                        <p>Languages:${element.languages}</p>                    
+                        <p>Languages:${element.languages}</p>
+                        <p>${element.borders.common}</p>
                       </div>
                     </div>
                       `;
-
               let btn = document.getElementById("btnRef");
               btn.addEventListener("click", function () {
                 creatMain.style.display = "block";
                 creatMain.style.display = "flex";
                 hero.style.display = "none";
                 hero.style.display = "flex";
-                moreInfo.innerHTML = "";
-              });
-            }
-          });
-        });
-      });
-
-      // Bita davlatni uzi haqida malumoti
-      let allCard = document.querySelectorAll(".colum");
-      allCard.forEach((el) => {
-        el.addEventListener("click", function () {
-          all.forEach((element) => {
-            if (el.id == element.name.slug) {
-              creatMain.style.display = "none";
-              hero.style.display = "none";
-              moreInfo.innerHTML = `
-                      <div class="img">
-                      <button id="btnRef">Back</button>
+                moreInfo.innerHTML = `  <div class="img id="btnRef">
+                      <button id="btnRef">Back</button>;
                       <img src="${element.flags.png}" alt="${element.flags.alt}" />
                     </div>
                     <div class="cardText">
@@ -149,12 +134,46 @@ window.addEventListener("DOMContentLoaded", function () {
                         <p>Capital: ${element.capital}</p>
                       </div>
                       <div class="rightTex">
-                        <p>Top level Domain: .be lorem...</p>
+                        <p>Top level Domain:.be lorem...</p>
                         <p>Currencies :${element.currencies}</p>
                         <p>Languages:${element.languages}</p>
+                        <p>${element.borders.common}</p>
                       </div>
-                    </div>
-                      `;
+                    </div>`;
+              });
+            }
+          });
+        });
+      });
+
+      let allCard = document.querySelectorAll(".colum");
+      allCard.forEach((el) => {
+        el.addEventListener("click", function () {
+          all.forEach((element) => {
+            if (el.id == element.name.slug) {
+              creatMain.style.display = "none";
+              hero.style.display = "none";
+              moreInfo.innerHTML = `
+                  <div class="img">
+                  <button id="btnRef">Back</button>
+                  <img src="${element.flags.png}" alt="${element.flags.alt}" />
+                </div>
+                <div class="cardText">
+                  <div class="leftTex">
+                    <p>Nativ name: ${element.name.nativeName}</p>
+                    <p>Population: ${element.population}</p>
+                    <p>Region: ${element.region}</p>
+                    <p>Sub region: ${element.subregion}</p>
+                    <p>Capital: ${element.capital}</p>
+                  </div>
+                  <div class="rightTex">
+                    <p>Top level Domain: .be lorem...</p>
+                    <p>Currencies :${element.currencies}</p>
+                    <p>Languages:${element.languages}</p>
+                    <p>${element.borders.slug}</p>
+                  </div>
+                </div>
+                  `;
 
               let btn = document.getElementById("btnRef");
               btn.addEventListener("click", function () {
@@ -187,6 +206,7 @@ window.addEventListener("DOMContentLoaded", function () {
                <p>Population:${el.population}</p>
                <p class="Region" id="${el.region}">Region: ${el.region}</p>
                <p>Capital ${el.capital}</p>
+
            </div>
            </div>
       `;
